@@ -1,4 +1,4 @@
-title = "Sandbox"
+title = "nodejs-workflow"
 
 exports.index = (req, res) ->
     res.render "index", { title : title }

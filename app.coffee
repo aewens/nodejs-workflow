@@ -1,7 +1,6 @@
 #Module dependencies
 express  = require "express"
 stylus   = require "stylus"
-nib      = require "nib"
 route    = require "./routes"
 
 #Express yourself!
@@ -9,8 +8,8 @@ app = express()
 
 #Setup: Begin
 compile = (str, path) ->
-    stylus(str).set("filename", path).use(nib())
-        
+    stylus(str).set("filename", path)
+
 app.set "views", __dirname + "/views"
 app.set "view engine", "jade"
 app.use express.logger "dev"

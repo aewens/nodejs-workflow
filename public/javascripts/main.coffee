@@ -1,14 +1,10 @@
 require.config
     urlArgs: "nocache=" + (new Date).getTime()
-    paths: 
-        "jquery":     "../vendor/jquery/dist/jquery.min"
-        "underscore": "../vendor/underscore/underscore"
-        "backbone":   "../vendor/backbone/backbone"
-        
+    paths:
+        "jquery": "../vendor/jquery/dist/jquery.min"
+
 require [
-    "jquery", 
-    "underscore", 
-    "backbone"
-], ($, _, Backbone) ->
+    "jquery"
+], ($) ->
     $(document).ready ->
         console.log "Document ready..."

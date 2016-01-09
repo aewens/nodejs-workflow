@@ -1,5 +1,5 @@
 {
-    "name": "sandbox",
+    "name": "nodejs-workflow",
     "version": "0.0.1",
     "private": true,
     "scripts": {
@@ -8,9 +8,7 @@
     "dependencies": {
         "express": "3.4.0",
         "jade": "*",
-        "stylus": "*",
-        "nib": "*",
-        "mongoose": "*"
+        "stylus": "*"
     },
     "engines": {
         "node": "0.10.x",
