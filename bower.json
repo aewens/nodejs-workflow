@@ -4,6 +4,7 @@
     "dependencies": {
         "bootstrap": null,
         "jquery": null,
-        "requirejs": null
+        "requirejs": null,
+	"firebase": null
     }
 }
