@@ -3,14 +3,36 @@
   require.config({
     urlArgs: "nocache=" + (new Date).getTime(),
     paths: {
-      "jquery": "../vendor/jquery/dist/jquery.min"
+      "jquery": "../vendor/jquery/dist/jquery.min",
+      "corejs": "../vendor/core_js/dist/core.min",
+      "firebase": "../vendor/firebase"
+    },
+    shim: {
+      "firebase": {
+        exports: "Firebase"
+      }
     }
   });
 
-  require(["jquery"], function($) {
-    return $(document).ready(function() {
-      return console.log("Document ready...");
+  require(["jquery", "corejs", "firebase"], function(jQuery, Core, Firebase) {
+    Core.extend("$", jQuery);
+    Core.extend("fb", Firebase);
+    Core.register("main", function(sandbox) {
+      return {
+        init: function() {
+          var self;
+          console.log("Starting main...");
+          self = this;
+          return sandbox.use("$")(document).ready(function() {
+            return console.log("Document ready...");
+          });
+        },
+        destroy: function() {
+          return console.log("Stopping main...");
+        }
+      };
     });
+    return Core.start("main");
   });
 
 }).call(this);
